@@ -1,0 +1,30 @@
+<form class="form-inline my-2 my-lg-0">
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      maxlength="20"
+      name="productName"
+      [(ngModel)]="productName"
+      (ngModelChange)="searchProduct()"
+    />
+    <div class="input-group-append">
+      <button
+        type="button"
+        class="btn btn-secondary btn-number"
+        (click)="searchProduct()"
+      >
+        <i class="fa fa-search"></i>
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary btn-number"
+        (click)="clearSearch()"
+        *ngIf="productName.length > 0"
+      >
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+  </div>
+</form>
